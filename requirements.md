@@ -74,3 +74,16 @@ Specify requirements for user documentation
 Include API documentation guidelines if applicable
 
 
+## Cursor / Software Development Guidelines
+1. If documents or a request is unclear, please ask questions ebfore coding
+2. Do not let SQL scripts try to refrence other SQL scripts.  They should be joined into one script or run stand alone
+3. When coding in python, only use libraries listed on https://repo.anaconda.com/pkgs/snowflake/
+4. You are authorised to create, update and delete files in the git repository
+5. You will regularly update the design documents and rules so that they stay inline with any decisions that we make
+6. I would like to avoid having many files in this project that are not used so want cleanup to occur during development.  Ideally you modify files rather than create new files.  If you create new files to replace an old one that is no longer needed, then either delete the old file or move it to a trash folder.  
+7. All data will be kept in Snowflake
+8. Use python version 3.11 unless I authorise an exception
+9. You can run SQL statements against my snowflake environment using snowsql. The connection uses keypair authentication with the passphrase stored in the snowsql config file at ~/.snowsql/config. To run snowsql, you run:
+export SNOWSQL_PRIVATE_KEY_PASSPHRASE="[insert in the passphrase from the config file]"
+snowsql -d [DB Name] -s [Schema Name] -f "/path/to/script.sql"
+Note: The SNOWSQL_PRIVATE_KEY_PASSPHRASE environment variable is required because snowsql reads the passphrase from this specific environment variable, not from the config file's private_key_passphrase setting.
