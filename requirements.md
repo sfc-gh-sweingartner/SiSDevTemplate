@@ -75,7 +75,7 @@ Include API documentation guidelines if applicable
 
 
 ## Cursor / Software Development Guidelines
-1. If documents or a request is unclear, please ask questions ebfore coding
+1. If documents or a request is unclear, please ask questions before coding
 2. Do not let SQL scripts try to refrence other SQL scripts.  They should be joined into one script or run stand alone
 3. When coding in python, only use libraries listed on https://repo.anaconda.com/pkgs/snowflake/
 4. You are authorised to create, update and delete files in the git repository
